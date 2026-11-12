@@ -78,7 +78,7 @@ La prédiction dépend donc de la règle choisie pour les égalités. C'est exac
 | — | nouvel outil `@tool stackelberg(a, b, c)` |
 | Chaîne `prompt \| modèle \| parser` du TP6 (jeu d'entrée) | extension à l'ultimatum : proposant et répondant LLM, format « CHOIX : » |
 
-**Conventions communes** : avec le Groupe 1, A = gains de J1 en lignes, B = gains de J2 en colonnes, indices à partir de 0. Avec le Groupe 6, on partage la chaîne `prompt | modèle | parser`.
+**Conventions communes** : avec le Groupe 1, A = gains de J1 en lignes, B = gains de J2 en colonnes, indices à partir de 0 (validé avec le Groupe 1 le 12/11/2026). Avec le Groupe 6, on partage la chaîne `prompt | modèle | parser`.
 
 ---
 
