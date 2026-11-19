@@ -7,6 +7,7 @@ gantt
     title Projet 2 - Jeux séquentiels - Planning prévisionnel
     dateFormat YYYY-MM-DD
     axisFormat %d/%m
+    todayMarker off
 
     section S1 Cadrage et théorie
     Dépôt GitHub et planning prévisionnel (Meryem)     :done, s1a, 2026-11-09, 7d
@@ -54,3 +55,35 @@ gantt
 
     section S7 Rapport final et bilan
     Relecture finale du code et du dépôt (Meryem)      :s7a, 2026-12-21, 7d
+    Vérification du code zippé (Yasmine)               :s7b, 2026-12-21, 7d
+    Relecture croisée et derniers tests (Zineb)        :s7c, 2026-12-21, 7d
+    Rapport final et planning réalisé (Imane)          :crit, s7d, 2026-12-21, 7d
+    Remise rapport et code zippé et bilan (Imane)      :milestone, m7, 2026-12-27, 0d
+```
+
+Source éditable : `docs/gantt_source.mmd` · Image : `docs/gantt_previsionnel.png`
+
+## Rôles et rotation
+
+| Personne | S1 à S4 | S5 à S7 (après rotation) |
+|---|---|---|
+| Meryem | Chef de projet / Théorie | Quant / Python |
+| Yasmine | Quant / Python | Développeur agent |
+| Zineb | Développeur agent | Testeur / Expérimentateur |
+| Imane | Testeur / Expérimentateur | Chef de projet / Théorie |
+
+## Jalons
+
+| Jalon | Semaine | Date prévue | Responsable | Statut |
+|---|---|---|---|---|
+| Dépôt GitHub + Gantt prévisionnel | S1 | 15/11 | Meryem | fait |
+| Fiche de lecture | S1 | 15/11 | Meryem | fait |
+| Point d'avancement S1 | S1 | 15/11 | Meryem | en cours |
+| Point d'avancement S2 | S2 | 22/11 | Yasmine | à faire |
+| Point d'avancement S3 | S3 | 29/11 | Zineb | à faire |
+| Point d'avancement S4 + rotation des rôles | S4 | 06/12 | Imane | à faire |
+| Point d'avancement S5 | S5 | 13/12 | Meryem | à faire |
+| Rapport à 80 % + point S6 | S6 | 20/12 | Imane / Yasmine | à faire |
+| Remise rapport + code zippé + bilan S7 | S7 | 27/12 | Imane | à faire |
+
+Légende des statuts : fait / en cours / retard / à faire.
