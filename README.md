@@ -14,10 +14,10 @@ Ensuite, des **agents LLM** (Ollama + LangChain) jouent ces jeux, et leurs choix
 
 ## Équipe
 
-| Membre  | Rôle (S1 à S4)            |
-|---------|---------------------------|
+| Membre  | Rôle (S1 à S4)           |
+| ------- | -------------------------- |
 | Meryem  | Chef de projet / Théorie  |
-| Yasmine | Quant / Python            |
+| Yasmine | Quant / Python             |
 | Zineb   | Développeur agent         |
 | Imane   | Testeur / Expérimentateur |
 
@@ -43,7 +43,6 @@ projet2-jeux-sequentiels/
    ```bash
    ollama pull llama3.1
    ```
-
 2. Cloner le dépôt et installer les dépendances :
 
    ```bash
@@ -54,12 +53,53 @@ projet2-jeux-sequentiels/
 
 ## Lancer
 
-| Action                        | Commande                  |
-|-------------------------------|---------------------------|
-| Tester l'agent et ses outils  | `python agent_tj_sma.py`  |
-| Lancer les tests              | `pytest`                  |
+| Action                       | Commande                   |
+| ---------------------------- | -------------------------- |
+| Tester l'agent et ses outils | `python agent_tj_sma.py` |
+| Lancer les tests             | `pytest`                 |
 
-L'agent a besoin qu'Ollama soit lancé. Les outils `@tool` peuvent se tester seuls avec `.invoke()`.
+L'agent a besoin qu'Ollama soit lancé. Les outils `@tool` peuvent se tester seuls avec `.invoke()`
+
+
+## Tests et validation
+
+Le projet utilise **pytest** pour vérifier le comportement des fonctions développées dans `src/jeux.py`.
+
+### Exécution des tests
+
+Depuis la racine du dépôt, activer l'environnement virtuel puis exécuter :
+
+```bash
+python -m pytest -v
+```
+
+### Organisation des tests
+
+Les tests automatisés sont regroupés dans le dossier `tests/` :
+
+- **`test_jeux.py`** : tests de la fonction `backward_induction`, couvrant notamment :
+
+  - le jeu d'entrée ;
+  - la maximisation des gains des joueurs ;
+  - les égalités entre plusieurs actions ;
+  - les décisions situées hors du chemin joué ;
+  - les feuilles terminales ;
+  - les gains négatifs et décimaux ;
+  - la tolérance numérique pour les égalités.
+- **`test_jeux_s2.py`** : tests complémentaires des fonctionnalités S2 :
+
+  - conservation de tous les plans optimaux ;
+  - résolution du modèle de Stackelberg ;
+  - résolution du jeu de l'ultimatum ;
+  - détection des équilibres de Nash dans les sous-jeux simultanés.
+
+### Vérifications expérimentales
+
+Le notebook `notebooks/experiences_s2.ipynb` regroupe des expériences complémentaires permettant de confronter les résultats des fonctions aux résultats théoriques.
+
+Les expériences portent sur le jeu d'entrée, Stackelberg, l'ultimatum, la conservation des plans optimaux et la résolution des sous-jeux simultanés.
+
+Le jeu du mille-pattes sera vérifié après l'implémentation de sa fonction en S3.
 
 ## Convention de commit
 
